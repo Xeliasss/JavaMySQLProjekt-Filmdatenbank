@@ -1,0 +1,14 @@
+@echo off
+
+REM Ordner für die kompilierten Dateien
+set BIN_DIR=bin
+set LIB_DIR=lib
+set SRC_DIR=src
+
+REM Kompiliere alle Java-Dateien
+javac -d %BIN_DIR% -cp %LIB_DIR%\mysql-connector-j-9.1.0.jar %SRC_DIR%\*.java
+
+REM Führe das Hauptprogramm aus
+java -cp %BIN_DIR%;%LIB_DIR%\mysql-connector-j-9.1.0.jar DatabaseConnector
+
+pause
